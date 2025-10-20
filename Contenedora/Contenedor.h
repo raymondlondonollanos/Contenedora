@@ -4,6 +4,7 @@
 #define CONTENEDOR_H
 #include <cstddef>
 #include <cassert>
+#include <optional>
 
 namespace contenedor
 {
@@ -58,8 +59,14 @@ namespace contenedor
 
 		//metodo para realizar copia profunda
 		void deep_copy(const Contenedor& copy);
+
+		void mostrarDatos();
+
+		friend std::optional<contenedor::Contenedor> validacionObjContenedor(double* ptr, std::size_t tamano);
 			
 	};
+
+	std::optional<Contenedor> validacionObjContenedor(double* ptr, std::size_t tamano);
 }
 
 #endif // !CONTENEDOR_H
